@@ -1,17 +1,18 @@
 :root {
-    --sage: #B9C4B6; /* Шалфейный */
-    --cream: #FAF9F6; /* Слоновая кость */
-    --text: #4A4E4D; /* Мягкий графит */
-    --accent: #DBCBB0; /* Песочный */
+    --sage: #87967a; /* Исправил на более насыщенный для читаемости */
+    --cream: #FAF9F6; 
+    --text: #4a5443; 
+    --accent: #DBCBB0; 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--cream);
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    line-height: 1.5;
     color: var(--text);
-    line-height: 1.7;
+    background-color: #f9fbf7;
 }
 
 .container {
@@ -20,15 +21,16 @@ body {
     padding: 0 20px;
 }
 
+/* ЗАГОЛОВКИ - теперь везде Great Vibes */
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Great Vibes', cursive;
     font-weight: 400;
 }
 
 /* Первый экран */
 .hero {
     padding: 100px 0;
-    background-color: #f1f4f0; /* Очень светлый зеленый */
+    background-color: #f1f4f0;
 }
 
 .hero-flex {
@@ -37,44 +39,49 @@ h1, h2, h3 {
     gap: 50px;
 }
 
-.hero-text h1 { font-size: 4rem; color: var(--sage); margin-bottom: 10px; }
-.tagline { font-style: italic; font-size: 1.2rem; margin-bottom: 20px; color: #8e948d; }
+/* Исправляем главный заголовок */
+.hero-text h1 { 
+    font-size: 4rem; 
+    color: var(--sage); 
+    margin-bottom: 10px;
+    line-height: 1.1; /* Чтобы строки не наезжали друг на друга */
+}
+
+.tagline { font-style: italic; font-size: 1.4rem; margin-bottom: 20px; color: #8e948d; }
 .description { margin-bottom: 30px; max-width: 500px; }
 
 .hero-image img {
     width: 350px;
     height: 450px;
     object-fit: cover;
-    border-radius: 150px 150px 0 0; /* Округлая форма куполом */
+    border-radius: 150px 150px 0 0;
     border: 10px solid white;
 }
 
+/* КНОПКА */
 .btn {
     display: inline-block;
-    padding: 16px 40px;
-    background-color: #87967a; /* Твой фирменный зеленый шалфей */
-    color: #ffffff !important; /* Белый цвет текста */
-    text-decoration: none; /* Убираем подчеркивание ссылки */
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 4px; /* Благородные, слегка скругленные углы */
-    transition: all 0.3s ease; /* Плавная анимация */
-    border: 2px solid #87967a;
+    padding: 12px 35px; /* Чуть уменьшил, так как шрифт крупный */
+    background-color: var(--sage);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 22px; /* Шрифт Great Vibes мелкий, тут увеличил */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--sage);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Эффект при наведении курсора */
 .btn:hover {
-    background-color: transparent; /* Фон исчезает */
-    color: #87967a !important; /* Текст становится зеленым */
-    transform: translateY(-2px); /* Кнопка чуть «подпрыгивает» */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    color: var(--sage) !important;
+    transform: translateY(-2px);
 }
 
 /* Услуги */
 .services { padding: 80px 0; text-align: center; }
-.services h2 { font-size: 2.5rem; margin-bottom: 50px; }
+.services h2 { font-size: 3.5rem; margin-bottom: 50px; color: var(--sage); }
 
 .service-grid {
     display: grid;
@@ -89,9 +96,9 @@ h1, h2, h3 {
     border: 1px solid #eee;
 }
 
-.service-card h3 { color: var(--sage); margin-bottom: 15px; }
+.service-card h3 { color: var(--sage); font-size: 2rem; margin-bottom: 15px; }
 
-/* Галерея */
+/* ГАЛЕРЕЯ */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -101,7 +108,7 @@ h1, h2, h3 {
 
 .grid img { width: 100%; border-radius: 20px; }
 
-/* Футер */
+/* ФУТЕР */
 footer {
     background: var(--sage);
     color: white;
@@ -109,49 +116,39 @@ footer {
     padding: 80px 0 40px;
 }
 
-footer h2 { margin-bottom: 20px; }
+footer h2 { font-size: 3rem; margin-bottom: 20px; }
 .social-links { margin: 30px 0; }
 .social-links a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
     border-bottom: 1px solid white;
+    font-size: 1.2rem;
 }
 
-.copyright { font-size: 0.8rem; margin-top: 50px; opacity: 0.7; }
+.copyright { font-size: 1rem; margin-top: 50px; opacity: 0.7; }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .hero-flex { flex-direction: column-reverse; text-align: center; }
-    .hero-text h1 { font-size: 3rem; }
-    .hero-image img { width: 280px; height: 350px; }
-}
-/* Контейнер для номера, чтобы сделать отступ от кнопки */
+/* НОМЕР ТЕЛЕФОНА */
 .phone-container {
-    margin-top: 20px; /* Расстояние между кнопкой и номером */
-    text-align: center; /* Выравнивание по центру */
+    margin-top: 25px;
+    text-align: center;
 }
 
-/* Стиль самого номера телефона */
 .phone-link {
-    font-size: 20px; /* Крупный, читаемый размер */
-    color: #87967a; /* Твой фирменный зеленый цвет */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-weight: bold; /* Делаем цифры жирными */
-    letter-spacing: 1px; /* Немного раздвинем цифры для красоты */
+    font-size: 24px;
+    color: var(--sage);
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
-/* Что будет, если навести на номер мышкой */
 .phone-link:hover {
-    color: #5a6650; /* Цвет станет чуть темнее */
-    text-decoration: underline; /* Появится аккуратное подчеркивание */
-.name-dark {
-    color: #2d3429; /* Тот самый темный цвет */
-    font-weight: 700; /* Чуть меньше жирность, чтобы не распирало строку */
-    display: inline-block; /* Позволяет четко контролировать положение */
-    line-height: 1; /* Принудительно возвращаем стандартную высоту строки */
-    margin: 0; 
-    padding: 0;
+    opacity: 0.7;
+    text-decoration: underline;
 }
 
+/* АДАПТИВНОСТЬ */
+@media (max-width: 768px) {
+    .hero-flex { flex-direction: column-reverse; text-align: center; }
+    .hero-text h1 { font-size: 3.5rem; }
+    .hero-image img { width: 280px; height: 350px; }
+}
