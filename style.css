@@ -126,3 +126,24 @@ footer h2 { margin-bottom: 20px; }
     .hero-text h1 { font-size: 3rem; }
     .hero-image img { width: 280px; height: 350px; }
 }
+/* Контейнер для номера, чтобы сделать отступ от кнопки */
+.phone-container {
+    margin-top: 20px; /* Расстояние между кнопкой и номером */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стиль самого номера телефона */
+.phone-link {
+    font-size: 20px; /* Крупный, читаемый размер */
+    color: #87967a; /* Твой фирменный зеленый цвет */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Делаем цифры жирными */
+    letter-spacing: 1px; /* Немного раздвинем цифры для красоты */
+    transition: all 0.3s ease;
+}
+
+/* Что будет, если навести на номер мышкой */
+.phone-link:hover {
+    color: #5a6650; /* Цвет станет чуть темнее */
+    text-decoration: underline; /* Появится аккуратное подчеркивание */
+}
