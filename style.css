@@ -115,3 +115,37 @@ footer h2 { margin-bottom: 20px; }
     .hero-text h1 { font-size: 3rem; }
     .hero-image img { width: 280px; height: 350px; }
 }
+/* Создаем контейнер для рамки */
+body::before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid #87967a; /* Твой цвет шалфея */
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Декоративные уголки-листочки */
+body::after {
+    content: "🌿"; /* Верхний левый угол */
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    font-size: 40px;
+    color: #87967a;
+    z-index: 1001;
+    /* Копируем этот же листик во все углы через тень */
+    text-shadow: 
+        calc(100vw - 70px) 0 0 #87967a,      /* Верхний правый */
+        0 calc(100vh - 70px) 0 #87967a,      /* Нижний левый */
+        calc(100vw - 70px) calc(100vh - 70px) 0 #87967a; /* Нижний правый */
+    pointer-events: none;
+}
+
+/* Чтобы контент не прилипал к рамке */
+main, .container {
+    padding: 40px;
+}
