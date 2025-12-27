@@ -1,5 +1,5 @@
 :root {
-    --sage: #87967a; /* Исправил на более насыщенный для читаемости */
+    --sage: #87967a; /* Фирменный шалфейный */
     --cream: #FAF9F6; 
     --text: #4a5443; 
     --accent: #DBCBB0; 
@@ -21,13 +21,13 @@ body {
     padding: 0 20px;
 }
 
-/* ЗАГОЛОВКИ - теперь везде Great Vibes */
+/* ЗАГОЛОВКИ */
 h1, h2, h3 {
     font-family: 'Great Vibes', cursive;
     font-weight: 400;
 }
 
-/* Первый экран */
+/* ПЕРВЫЙ ЭКРАН */
 .hero {
     padding: 100px 0;
     background-color: #f1f4f0;
@@ -39,12 +39,11 @@ h1, h2, h3 {
     gap: 50px;
 }
 
-/* Исправляем главный заголовок */
 .hero-text h1 { 
     font-size: 4rem; 
     color: var(--sage); 
     margin-bottom: 10px;
-    line-height: 1.1; /* Чтобы строки не наезжали друг на друга */
+    line-height: 1.1;
 }
 
 .tagline { font-style: italic; font-size: 1.4rem; margin-bottom: 20px; color: #8e948d; }
@@ -61,11 +60,11 @@ h1, h2, h3 {
 /* КНОПКА */
 .btn {
     display: inline-block;
-    padding: 12px 35px; /* Чуть уменьшил, так как шрифт крупный */
+    padding: 12px 35px;
     background-color: var(--sage);
     color: #ffffff !important;
     text-decoration: none;
-    font-size: 22px; /* Шрифт Great Vibes мелкий, тут увеличил */
+    font-size: 22px;
     border-radius: 4px;
     transition: all 0.3s ease;
     border: 2px solid var(--sage);
@@ -79,7 +78,7 @@ h1, h2, h3 {
     transform: translateY(-2px);
 }
 
-/* Услуги */
+/* УСЛУГИ */
 .services { padding: 80px 0; text-align: center; }
 .services h2 { font-size: 3.5rem; margin-bottom: 50px; color: var(--sage); }
 
@@ -117,25 +116,67 @@ footer {
 }
 
 footer h2 { font-size: 3rem; margin-bottom: 20px; }
+
+/* СТИЛЬ ДЛЯ АКТИВНОЙ ФРАЗЫ "Напишите мне..." */
+.footer-link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem; /* Чуть крупнее для акцента */
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    border-bottom: 1px solid white;
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* СОЦСЕТИ */
 .social-links { margin: 30px 0; }
 .social-links a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
     border-bottom: 1px solid white;
+    font-size: 1.5rem;
+}
+
+/* QR-КОД */
+.qr-block {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.qr-block p {
     font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.qr-img {
+    width: 180px; /* Оптимальный размер */
+    height: 180px;
+    object-fit: contain;
+    background-color: white; /* Белый фон для считывания */
+    padding: 10px;
+    border: 5px solid white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .copyright { font-size: 1rem; margin-top: 50px; opacity: 0.7; }
 
-/* НОМЕР ТЕЛЕФОНА */
+/* НОМЕР ТЕЛЕФОНА (в первом блоке) */
 .phone-container {
     margin-top: 25px;
     text-align: center;
 }
 
 .phone-link {
-    font-size: 24px;
+    font-size: 26px;
     color: var(--sage);
     text-decoration: none;
     transition: all 0.3s ease;
@@ -151,25 +192,5 @@ footer h2 { font-size: 3rem; margin-bottom: 20px; }
     .hero-flex { flex-direction: column-reverse; text-align: center; }
     .hero-text h1 { font-size: 3.5rem; }
     .hero-image img { width: 280px; height: 350px; }
-}
-/* Настройки для блока с QR-кодом */
-.qr-block {
-    margin: 30px 0; /* Отступы сверху и снизу от текста */
-    text-align: center;
-}
-
-.qr-block p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: white; /* Чтобы текст был виден на фоне футера */
-}
-
-/* Настройки самой картинки */
-.qr-img {
-    width: 150px;    /* Устанавливаем ширину (как визитка) */
-    height: 150px;   /* Устанавливаем высоту */
-    object-fit: contain; /* Чтобы код не сплющило */
-    border: 8px solid white; /* Белая рамка, чтобы сканер лучше видел код */
-    border-radius: 10px;    /* Слегка скруглим углы */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Легкая тень для объема */
+    .footer-link { font-size: 1.2rem; }
 }
