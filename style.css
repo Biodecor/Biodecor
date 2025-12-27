@@ -115,37 +115,56 @@ footer h2 { margin-bottom: 20px; }
     .hero-text h1 { font-size: 3rem; }
     .hero-image img { width: 280px; height: 350px; }
 }
-/* Создаем контейнер для рамки */
+/* Внешняя рамка-отступ */
+body {
+    padding: 25px;
+    background-color: #fdfbf7; /* Цвет слоновой кости */
+    box-sizing: border-box;
+}
+
+/* Сама декоративная рамка */
 body::before {
     content: "";
     position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    border: 2px solid #87967a; /* Твой цвет шалфея */
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid #87967a; /* Тонкая линия цвета шалфея */
     pointer-events: none;
-    z-index: 1000;
+    z-index: 9999;
 }
 
-/* Декоративные уголки-листочки */
+/* Декоративные растительные уголки (делаем их через узоры) */
 body::after {
-    content: "🌿"; /* Верхний левый угол */
+    content: "";
     position: fixed;
-    top: 5px;
-    left: 5px;
-    font-size: 40px;
-    color: #87967a;
-    z-index: 1001;
-    /* Копируем этот же листик во все углы через тень */
-    text-shadow: 
-        calc(100vw - 70px) 0 0 #87967a,      /* Верхний правый */
-        0 calc(100vh - 70px) 0 #87967a,      /* Нижний левый */
-        calc(100vw - 70px) calc(100vh - 70px) 0 #87967a; /* Нижний правый */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: 10000;
+    
+    /* Рисуем уголки в стиле минимализма */
+    background: 
+        linear-gradient(45deg, transparent 95%, #87967a 95%) 0 0 / 50px 50px no-repeat,
+        linear-gradient(-45deg, transparent 95%, #87967a 95%) 100% 0 / 50px 50px no-repeat,
+        linear-gradient(135deg, transparent 95%, #87967a 95%) 0 100% / 50px 50px no-repeat,
+        linear-gradient(-135deg, transparent 95%, #87967a 95%) 100% 100% / 50px 50px no-repeat;
 }
 
-/* Чтобы контент не прилипал к рамке */
-main, .container {
-    padding: 40px;
+/* Добавим небольшие точки по углам для акцента */
+header::before {
+    content: "•";
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: #87967a;
+    font-size: 24px;
+    z-index: 10001;
+    /* Дублируем во все углы */
+    text-shadow: calc(100vw - 30px) 0 0 #87967a, 
+                 0 calc(100vh - 30px) 0 #87967a, 
+                 calc(100vw - 30px) calc(100vh - 30px) 0 #87967a;
 }
